@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.box {
+  width: 25vw;
+  height: 460px;
+  /* height: 60vh; */
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+  /* background-color: #a5bbdd; */
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  /* min-width: 20rem;
+  min-height: 35rem; */
+}
+
+.wave {
+  opacity: 0.3;
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  background: white;
+  width: 50rem;
+  height: 26rem;
+  margin-left: -25rem;
+  margin-top: -20rem;
+  transform-origin: 50% 45%;
+  border-radius: 43%;
+  transition: all 0.8s;
+}
+
+.wave-one {
+  animation: drift 3000ms infinite linear;
+}
+
+.wave-two {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.4;
+}
+
+.wave-three {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.2;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
